@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour — نور</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bordeaux: #6B1E3C;
+    --or: #C9A84C;
+    --fond: #F5F0E8;
+    --vert: #4A5E3A;
+    --texte: #1A1A1A;
+    --gris: #8A8A8A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Quicksand', sans-serif; background: var(--fond); color: var(--texte); min-height: 100vh; }
+
+  header {
+    background: var(--bordeaux);
+    padding: 60px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: 'نور';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 200px;
+    color: rgba(255,255,255,0.04);
+    top: -30px; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .logo-circle {
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 36px;
+  }
+  header h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; }
+  header p { color: rgba(255,255,255,0.6); font-size: 15px; margin-top: 6px; }
+
+  nav {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #EDE8E0;
+    flex-wrap: wrap;
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--bordeaux);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  nav a:hover, nav a.active { background: var(--bordeaux); color: #fff; }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--bordeaux);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F0EBE3;
+  }
+  .card p, .card li { font-size: 14px; line-height: 24px; color: #3A3A3A; margin-bottom: 10px; }
+  .card ul { padding-left: 20px; }
+  .card li { margin-bottom: 6px; }
+  .card strong { color: var(--texte); font-weight: 700; }
+
+  .badge {
+    display: inline-block;
+    background: var(--fond);
+    border: 1px solid #E0D8D0;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bordeaux);
+    margin-bottom: 16px;
+  }
+
+  .contact-box {
+    background: var(--bordeaux);
+    border-radius: 20px;
+    padding: 28px;
+    text-align: center;
+    color: #fff;
+  }
+  .contact-box p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 12px; }
+  .contact-box a {
+    color: var(--or);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--gris);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-circle">✨</div>
+  <h1>Nour · نور</h1>
+  <p>La lumière · Application événementielle</p>
+</header>
+
+<nav>
+  <a href="index.html" class="active">Accueil</a>
+  <a href="confidentialite.html">Confidentialité</a>
+  <a href="cgu.html">CGU</a>
+</nav>
+
+<div class="container">
+
+  <div class="card">
+    <span class="badge">Notre mission</span>
+    <h2>Bienvenue sur Nour</h2>
+    <p>Nour est une application mobile française d'annuaire en ligne mettant en visibilité des prestataires événementiels — henné, photographes, coiffeurs, traiteurs, décorateurs et bien plus.</p>
+    <p>Notre mission : vous aider à trouver le bon prestataire, au bon endroit, facilement.</p>
+  </div>
+
+  <div class="card">
+    <h2>Documents légaux</h2>
+    <p>Retrouvez ici tous nos documents légaux :</p>
+    <ul>
+      <li><a href="confidentialite.html" style="color:var(--bordeaux);font-weight:600;">Politique de confidentialité</a> — comment nous gérons vos données</li>
+      <li><a href="cgu.html" style="color:var(--bordeaux);font-weight:600;">Conditions Générales d'Utilisation</a> — règles d'utilisation de l'application</li>
+    </ul>
+  </div>
+
+  <div class="contact-box">
+    <p>Une question ? Contactez-nous</p>
+    <a href="mailto:nourapp.sav@gmail.com">nourapp.sav@gmail.com</a>
+  </div>
+
+</div>
+
+<footer>© 2026 Nour · نور — Tous droits réservés</footer>
+
+</body>
+</html>
