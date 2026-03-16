@@ -4,40 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CGU — Nour</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bordeaux: #6B1E3C; --or: #C9A84C; --fond: #F5F0E8; --vert: #4A5E3A; --texte: #1A1A1A; --gris: #8A8A8A; }
+  :root { --bordeaux: #6B1E3C; --or: #C9A84C; --fond: #F5F0E8; --vert: #4A5E3A; --texte: #1A1A1A; --gris: #8A8A8A; --blanc: #FFFFFF; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Quicksand', sans-serif; background: var(--fond); color: var(--texte); }
-  header { background: var(--bordeaux); padding: 60px 24px 48px; text-align: center; position: relative; overflow: hidden; }
-  header::before { content: 'CGU'; position: absolute; font-family: 'Playfair Display', serif; font-size: 160px; color: rgba(255,255,255,0.04); top: -10px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-  .icon-circle { width: 72px; height: 72px; background: rgba(255,255,255,0.15); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; }
-  header h1 { font-family: 'Playfair Display', serif; font-size: 30px; color: #fff; }
-  header p { color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 6px; }
-  nav { background: #fff; display: flex; justify-content: center; gap: 4px; padding: 12px 16px; border-bottom: 1px solid #EDE8E0; flex-wrap: wrap; }
-  nav a { text-decoration: none; color: var(--bordeaux); font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.2s; }
-  nav a:hover, nav a.active { background: var(--bordeaux); color: #fff; }
-  .container { max-width: 760px; margin: 0 auto; padding: 32px 20px 60px; }
-  .card { background: #fff; border-radius: 20px; padding: 28px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-  .card h2 { font-size: 15px; font-weight: 700; color: var(--bordeaux); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--fond); }
-  .card p { font-size: 14px; line-height: 24px; color: #3A3A3A; margin-bottom: 10px; }
-  .card ul { padding-left: 18px; margin-bottom: 10px; }
-  .card li { font-size: 14px; line-height: 22px; color: #3A3A3A; margin-bottom: 5px; }
+  body { font-family: 'Quicksand', sans-serif; background: var(--fond); color: var(--texte); -webkit-font-smoothing: antialiased; }
+
+  header { background: var(--bordeaux); padding: 56px 24px 64px; text-align: center; position: relative; overflow: hidden; }
+  header::before { content: 'CGU'; position: absolute; font-size: 220px; font-weight: 700; color: rgba(255,255,255,0.03); top: -30px; left: 50%; transform: translateX(-50%); pointer-events: none; font-family: 'Quicksand', sans-serif; }
+  header::after { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(201,168,76,0.08); bottom: -120px; right: -60px; }
+  .header-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 20px; }
+  header h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  header p { color: rgba(255,255,255,0.55); font-size: 15px; font-weight: 500; }
+
+  nav { background: var(--blanc); display: flex; justify-content: center; gap: 6px; padding: 14px 20px; position: sticky; top: 0; z-index: 10; box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
+  nav a { text-decoration: none; color: var(--texte); font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 24px; transition: all 0.25s ease; }
+  nav a:hover { background: var(--fond); }
+  nav a.active { background: var(--bordeaux); color: var(--blanc); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 36px 20px 60px; }
+  .date-badge { display: inline-block; background: var(--blanc); border: 1px solid #E0D8D0; border-radius: 20px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--gris); margin-bottom: 24px; }
+
+  .card { background: var(--blanc); border-radius: 24px; padding: 32px; margin-bottom: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); transition: transform 0.2s ease; }
+  .card:hover { transform: translateY(-2px); }
+  .card h2 { font-size: 17px; font-weight: 700; color: var(--bordeaux); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid var(--fond); }
+  .card p { font-size: 14px; line-height: 1.75; color: #555; margin-bottom: 10px; }
+  .card ul { padding-left: 0; list-style: none; margin: 8px 0; }
+  .card li { font-size: 14px; line-height: 1.6; color: #555; padding: 8px 0; border-bottom: 1px solid var(--fond); display: flex; align-items: flex-start; gap: 10px; }
+  .card li:last-child { border-bottom: none; }
+  .card li::before { content: '•'; color: var(--bordeaux); font-weight: 700; flex-shrink: 0; }
   .card strong { color: var(--texte); font-weight: 700; }
-  .date-badge { display: inline-block; background: var(--fond); border: 1px solid #E0D8D0; border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 600; color: var(--gris); margin-bottom: 24px; }
-  .alerte { background: #FFF8F0; border-left: 4px solid var(--or); border-radius: 0 12px 12px 0; padding: 14px 16px; margin-top: 12px; font-size: 14px; line-height: 22px; color: #3A3A3A; }
-  .contact-box { background: var(--bordeaux); border-radius: 20px; padding: 28px; text-align: center; color: #fff; }
-  .contact-box p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 12px; }
-  .contact-box a { color: var(--or); font-weight: 700; text-decoration: none; font-size: 15px; }
-  footer { text-align: center; padding: 24px; font-size: 12px; color: var(--gris); }
+  .card a { color: var(--bordeaux); font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(107,30,60,0.2); transition: border-color 0.2s; }
+  .card a:hover { border-color: var(--bordeaux); }
+
+  .highlight { background: #FFF8F0; border-left: 3px solid var(--or); border-radius: 0 12px 12px 0; padding: 14px 16px; margin-top: 12px; font-size: 14px; line-height: 1.6; color: #555; }
+
+  .contact-box { background: var(--bordeaux); border-radius: 24px; padding: 36px 28px; text-align: center; position: relative; overflow: hidden; }
+  .contact-box::before { content: ''; position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.04); top: -80px; right: -60px; }
+  .contact-box p { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 14px; font-weight: 500; }
+  .contact-box a { display: inline-flex; align-items: center; gap: 8px; color: var(--or); font-weight: 700; text-decoration: none; font-size: 16px; padding: 10px 24px; border: 2px solid rgba(201,168,76,0.3); border-radius: 30px; transition: all 0.25s; }
+  .contact-box a:hover { background: rgba(201,168,76,0.1); border-color: var(--or); }
+
+  footer { text-align: center; padding: 28px; font-size: 12px; color: var(--gris); font-weight: 500; }
+
+  @media (max-width: 600px) { header h1 { font-size: 26px; } .card { padding: 24px; } }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="icon-circle"></div>
+  <div class="header-badge">Conditions d'utilisation</div>
   <h1>Conditions Générales d'Utilisation</h1>
-  <p>Nour · نور</p>
+  <p>Nour</p>
 </header>
 
 <nav>
@@ -55,7 +73,7 @@
     <h2>1. Présentation de l'application</h2>
     <p>Nour est une application mobile d'annuaire en ligne mettant en visibilité des prestataires de services événementiels (Animation & Divertissement, Beauté & Soin, Coiffure, Décoration & Fleuriste, DJ & Musique, Henné, Lieux, Location mobilier & Matériel, Maquillage, Organisation & Événementiel, Papeterie, Photographe & Vidéaste, Tenues & Robes, Traiteur & Pâtisserie, Transport & Véhicule).</p>
     <p>Nour n'est pas une plateforme de réservation, de paiement ou de gestion de rendez-vous. Notre rôle se limite exclusivement à mettre en visibilité les prestataires et à faciliter la prise de contact.</p>
-    <p>Contact : <a href="mailto:nourapp.sav@gmail.com" style="color:var(--bordeaux);font-weight:600;">nourapp.sav@gmail.com</a></p>
+    <p>Contact : <a href="mailto:nourapp.sav@gmail.com">nourapp.sav@gmail.com</a></p>
   </div>
 
   <div class="card">
@@ -85,7 +103,7 @@
       <li>Les modalités d'exercice de l'activité des prestataires</li>
     </ul>
     <p>Chaque prestataire est un indépendant qui exerce sous sa propre et entière responsabilité. Nour ne vérifie pas le statut juridique, fiscal ou réglementaire des prestataires inscrits.</p>
-    <div class="alerte">Tout accord, paiement ou arrangement conclu entre un utilisateur et un prestataire l'est directement entre eux, sans aucune implication de Nour.</div>
+    <div class="highlight">Tout accord, paiement ou arrangement conclu entre un utilisateur et un prestataire l'est directement entre eux, sans aucune implication de Nour.</div>
   </div>
 
   <div class="card">
@@ -116,15 +134,15 @@
     <h2>7. Offres payantes</h2>
     <p>Nour propose deux offres payantes pour les prestataires :</p>
     <ul>
-      <li><strong>Stats — 1,99€/mois (ou 19,99€/an)</strong> : statistiques de clics détaillées et nombre de vues de profil.</li>
-      <li><strong>Premium — 4,99€/mois (ou 49,99€/an)</strong> : jusqu'à 10 photos, badge ✨ Premium, priorité dans les résultats, statistiques détaillées, et tags de spécialités (jusqu'à 5 mots-clés).</li>
+      <li><strong>Stats — 1,99€/mois (ou 19,99€/an)</strong> : statistiques détaillées de clics (WhatsApp, Instagram, Snapchat, TikTok, site web) et nombre de vues de profil</li>
+      <li><strong>Premium — 4,99€/mois (ou 49,99€/an)</strong> : jusqu'à 10 photos, badge Premium, priorité dans les résultats, statistiques détaillées, et tags de spécialités (jusqu'à 5 mots-clés)</li>
     </ul>
     <p>3 jours offerts à l'activation, sans engagement. Le paiement est géré via l'App Store ou Google Play. L'abonnement peut être résilié à tout moment depuis les Réglages de votre iPhone ou Google Play.</p>
   </div>
 
   <div class="card">
     <h2>8. Avis et contenus</h2>
-    <p>Les utilisateurs peuvent laisser des avis sincères et respectueux. Nour se réserve le droit de supprimer tout avis jugé abusif ou diffamatoire.</p>
+    <p>Les utilisateurs peuvent laisser des avis sincères et respectueux. Les commentaires et réponses sont limités à 300 caractères. Nour se réserve le droit de supprimer tout avis jugé abusif ou diffamatoire.</p>
     <p>En publiant du contenu (photos, avis, descriptions), vous accordez à Nour une licence non exclusive d'utilisation dans le cadre du fonctionnement de l'application.</p>
   </div>
 
@@ -145,7 +163,7 @@
   <div class="card">
     <h2>10. Suppression du compte et des données</h2>
     <p>Vous pouvez supprimer votre compte à tout moment depuis l'onglet Profil, via le bouton "Supprimer mon compte". La suppression est définitive.</p>
-    <div class="alerte">⚠️ Désinstaller l'application ne supprime pas votre compte ni vos données. Pour supprimer définitivement vos données, utilisez le bouton "Supprimer mon compte" dans l'application.</div>
+    <div class="highlight">Désinstaller l'application ne supprime pas votre compte ni vos données. Pour supprimer définitivement vos données, utilisez le bouton "Supprimer mon compte" dans l'application.</div>
   </div>
 
   <div class="card">
@@ -164,6 +182,6 @@
   </div>
 </div>
 
-<footer>© 2026 Nour · نور — Tous droits réservés</footer>
+<footer>© 2026 Nour — Tous droits réservés</footer>
 </body>
 </html>

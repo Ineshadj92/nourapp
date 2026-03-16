@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nour — نور</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Nour</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bordeaux: #6B1E3C;
@@ -13,122 +13,250 @@
     --vert: #4A5E3A;
     --texte: #1A1A1A;
     --gris: #8A8A8A;
+    --blanc: #FFFFFF;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Quicksand', sans-serif; background: var(--fond); color: var(--texte); min-height: 100vh; }
+  body { font-family: 'Quicksand', sans-serif; background: var(--fond); color: var(--texte); min-height: 100vh; -webkit-font-smoothing: antialiased; }
 
+  /* Header */
   header {
     background: var(--bordeaux);
-    padding: 60px 24px 48px;
+    padding: 56px 24px 64px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
   header::before {
-    content: 'نور';
+    content: 'NOUR';
     position: absolute;
-    font-family: 'Playfair Display', serif;
-    font-size: 200px;
-    color: rgba(255,255,255,0.04);
-    top: -30px; left: 50%;
+    font-size: 280px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.03);
+    top: -60px; left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
     white-space: nowrap;
+    font-family: 'Quicksand', sans-serif;
   }
-  .logo-circle {
-    width: 80px; height: 80px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 22px;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 36px;
+  header::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.08);
+    bottom: -120px; right: -60px;
   }
-  header h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; }
-  header p { color: rgba(255,255,255,0.6); font-size: 15px; margin-top: 6px; }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+  }
+  header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--blanc);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  header h1 span { color: var(--or); }
+  header p {
+    color: rgba(255,255,255,0.55);
+    font-size: 15px;
+    font-weight: 500;
+    max-width: 360px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
 
+  /* Nav */
   nav {
-    background: #fff;
+    background: var(--blanc);
     display: flex;
     justify-content: center;
-    gap: 4px;
-    padding: 12px 16px;
-    border-bottom: 1px solid #EDE8E0;
-    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
   }
   nav a {
     text-decoration: none;
-    color: var(--bordeaux);
+    color: var(--texte);
     font-size: 13px;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.2s;
+    padding: 8px 20px;
+    border-radius: 24px;
+    transition: all 0.25s ease;
   }
-  nav a:hover, nav a.active { background: var(--bordeaux); color: #fff; }
+  nav a:hover { background: var(--fond); }
+  nav a.active { background: var(--bordeaux); color: var(--blanc); }
 
-  .container { max-width: 760px; margin: 0 auto; padding: 32px 20px 60px; }
+  /* Container */
+  .container { max-width: 720px; margin: 0 auto; padding: 36px 20px 60px; }
 
+  /* Cards */
   .card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 28px;
+    background: var(--blanc);
+    border-radius: 24px;
+    padding: 32px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--bordeaux);
+    background: rgba(107,30,60,0.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
   }
   .card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--bordeaux);
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #F0EBE3;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--texte);
+    margin-bottom: 14px;
+    line-height: 1.3;
   }
-  .card p, .card li { font-size: 14px; line-height: 24px; color: #3A3A3A; margin-bottom: 10px; }
-  .card ul { padding-left: 20px; }
-  .card li { margin-bottom: 6px; }
-  .card strong { color: var(--texte); font-weight: 700; }
+  .card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .card ul { padding-left: 0; list-style: none; margin-top: 12px; }
+  .card li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--fond);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .card li:last-child { border-bottom: none; }
+  .card li::before {
+    content: '→';
+    color: var(--bordeaux);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .card a {
+    color: var(--bordeaux);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(107,30,60,0.2);
+    transition: border-color 0.2s;
+  }
+  .card a:hover { border-color: var(--bordeaux); }
 
-  .badge {
-    display: inline-block;
+  /* Features grid */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .feature {
     background: var(--fond);
-    border: 1px solid #E0D8D0;
-    border-radius: 20px;
-    padding: 4px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--bordeaux);
-    margin-bottom: 16px;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .feature-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .feature-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--texte);
+    margin-bottom: 4px;
+  }
+  .feature-desc {
+    font-size: 11px;
+    color: var(--gris);
+    font-weight: 500;
   }
 
+  /* Contact */
   .contact-box {
     background: var(--bordeaux);
-    border-radius: 20px;
-    padding: 28px;
+    border-radius: 24px;
+    padding: 36px 28px;
     text-align: center;
-    color: #fff;
+    position: relative;
+    overflow: hidden;
   }
-  .contact-box p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 12px; }
+  .contact-box::before {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    top: -80px; right: -60px;
+  }
+  .contact-box p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
   .contact-box a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: var(--or);
     font-weight: 700;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
+    padding: 10px 24px;
+    border: 2px solid rgba(201,168,76,0.3);
+    border-radius: 30px;
+    transition: all 0.25s ease;
+  }
+  .contact-box a:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--or);
   }
 
+  /* Footer */
   footer {
     text-align: center;
-    padding: 24px;
+    padding: 28px;
     font-size: 12px;
     color: var(--gris);
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 30px; }
+    .features { grid-template-columns: 1fr; }
+    .card { padding: 24px; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-circle"></div>
-  <h1>Nour · نور</h1>
-  <p>La lumière · Application événementielle</p>
+  <div class="header-badge">Application événementielle</div>
+  <h1>Nour</h1>
+  <p>Trouvez le prestataire parfait pour vos événements, partout en France</p>
 </header>
 
 <nav>
@@ -140,18 +268,36 @@
 <div class="container">
 
   <div class="card">
-    <span class="badge">Notre mission</span>
+    <span class="card-label">Notre mission</span>
     <h2>Bienvenue sur Nour</h2>
-    <p>Nour est une application mobile française d'annuaire en ligne mettant en visibilité des prestataires événementiels — henné, photographes, coiffeurs, traiteurs, décorateurs et bien plus.</p>
-    <p>Notre mission : vous aider à trouver le bon prestataire, au bon endroit, facilement.</p>
+    <p>Nour est une application mobile française qui met en relation les particuliers avec des prestataires événementiels — henné, photographes, coiffeurs, traiteurs, décorateurs et bien plus.</p>
+    <p>Notre mission est simple : vous aider à trouver le bon prestataire, au bon endroit, facilement.</p>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon"></div>
+        <div class="feature-title">Géolocalisé</div>
+        <div class="feature-desc">Partout en France</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"></div>
+        <div class="feature-title">Gratuit</div>
+        <div class="feature-desc">Sans frais cachés</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"></div>
+        <div class="feature-title">Avis vérifiés</div>
+        <div class="feature-desc">Communauté active</div>
+      </div>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Documents légaux</h2>
+    <span class="card-label">Documents légaux</span>
+    <h2>Informations importantes</h2>
     <p>Retrouvez ici tous nos documents légaux :</p>
     <ul>
-      <li><a href="confidentialite.html" style="color:var(--bordeaux);font-weight:600;">Politique de confidentialité</a> — comment nous gérons vos données</li>
-      <li><a href="cgu.html" style="color:var(--bordeaux);font-weight:600;">Conditions Générales d'Utilisation</a> — règles d'utilisation de l'application</li>
+      <li><a href="confidentialite.html">Politique de confidentialité</a> — comment nous gérons vos données</li>
+      <li><a href="cgu.html">Conditions Générales d'Utilisation</a> — règles d'utilisation de l'application</li>
     </ul>
   </div>
 
@@ -162,7 +308,7 @@
 
 </div>
 
-<footer>© 2026 Nour · نور — Tous droits réservés</footer>
+<footer>© 2026 Nour — Tous droits réservés</footer>
 
 </body>
 </html>
