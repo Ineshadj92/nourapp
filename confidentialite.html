@@ -9,22 +9,17 @@
   :root { --bordeaux: #6B1E3C; --or: #C9A84C; --fond: #F5F0E8; --vert: #4A5E3A; --texte: #1A1A1A; --gris: #8A8A8A; --blanc: #FFFFFF; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Quicksand', sans-serif; background: var(--fond); color: var(--texte); -webkit-font-smoothing: antialiased; }
-
   header { background: var(--vert); padding: 56px 24px 64px; text-align: center; position: relative; overflow: hidden; }
-  header::before { content: ''; position: absolute; font-size: 200px; opacity: 0.04; top: -40px; left: 50%; transform: translateX(-50%); pointer-events: none; }
   header::after { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.04); bottom: -120px; right: -60px; }
   .header-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 20px; }
   header h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px; }
   header p { color: rgba(255,255,255,0.55); font-size: 15px; font-weight: 500; }
-
   nav { background: var(--blanc); display: flex; justify-content: center; gap: 6px; padding: 14px 20px; position: sticky; top: 0; z-index: 10; box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
   nav a { text-decoration: none; color: var(--texte); font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 24px; transition: all 0.25s ease; }
   nav a:hover { background: var(--fond); }
   nav a.active { background: var(--vert); color: var(--blanc); }
-
   .container { max-width: 720px; margin: 0 auto; padding: 36px 20px 60px; }
   .date-badge { display: inline-block; background: var(--blanc); border: 1px solid #E0D8D0; border-radius: 20px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--gris); margin-bottom: 24px; }
-
   .card { background: var(--blanc); border-radius: 24px; padding: 32px; margin-bottom: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); transition: transform 0.2s ease; }
   .card:hover { transform: translateY(-2px); }
   .card h2 { font-size: 17px; font-weight: 700; color: var(--texte); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid var(--fond); display: flex; align-items: center; gap: 10px; }
@@ -37,17 +32,13 @@
   .card strong { color: var(--texte); font-weight: 700; }
   .card a { color: var(--vert); font-weight: 700; text-decoration: none; border-bottom: 2px solid rgba(74,94,58,0.2); transition: border-color 0.2s; }
   .card a:hover { border-color: var(--vert); }
-
   .highlight { background: #F8F5F0; border-left: 3px solid var(--or); border-radius: 0 12px 12px 0; padding: 14px 16px; margin-top: 12px; font-size: 14px; line-height: 1.6; color: #555; }
-
   .contact-box { background: var(--vert); border-radius: 24px; padding: 36px 28px; text-align: center; position: relative; overflow: hidden; }
   .contact-box::before { content: ''; position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.04); top: -80px; right: -60px; }
   .contact-box p { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 14px; font-weight: 500; }
   .contact-box a { display: inline-flex; align-items: center; gap: 8px; color: var(--or); font-weight: 700; text-decoration: none; font-size: 16px; padding: 10px 24px; border: 2px solid rgba(201,168,76,0.3); border-radius: 30px; transition: all 0.25s; }
   .contact-box a:hover { background: rgba(201,168,76,0.1); border-color: var(--or); }
-
   footer { text-align: center; padding: 28px; font-size: 12px; color: var(--gris); font-weight: 500; }
-
   @media (max-width: 600px) { header h1 { font-size: 26px; } .card { padding: 24px; } }
 </style>
 </head>
@@ -72,7 +63,7 @@
 
   <div class="card">
     <h2><span class="num">1</span>Qui sommes-nous ?</h2>
-    <p>Nour est une application mobile française de mise en relation entre particuliers et prestataires événementiels.</p>
+    <p>Nour est un annuaire en ligne français qui référence des prestataires événementiels. Nour agit uniquement en qualité d'intermédiaire technique.</p>
     <p>Contact : <a href="mailto:nourapp.sav@gmail.com">nourapp.sav@gmail.com</a></p>
     <p>En utilisant Nour, vous acceptez les pratiques décrites dans cette politique.</p>
   </div>
@@ -83,13 +74,13 @@
     <p><strong>Pour tous les utilisateurs :</strong></p>
     <ul>
       <li>Adresse e-mail (création de compte)</li>
-      <li>Localisation approximative (utilisée uniquement pour afficher les prestataires proches — non stockée)</li>
+      <li>Localisation approximative (utilisée uniquement en temps réel pour afficher les prestataires proches — non stockée, non conservée, non transmise)</li>
     </ul>
     <p><strong>Pour les prestataires uniquement :</strong></p>
     <ul>
       <li>Photos uploadées</li>
       <li>Adresse professionnelle et ville</li>
-      <li>Coordonnées de contact : WhatsApp, Instagram, Snapchat, TikTok (renseignés volontairement)</li>
+      <li>Coordonnées de contact : WhatsApp, Instagram, Snapchat, TikTok, site web (renseignés volontairement)</li>
       <li>Avis et notes reçus</li>
       <li>Statistiques d'usage : vues de profil, clics de contact (réseaux sociaux et site web), favoris</li>
     </ul>
@@ -101,7 +92,7 @@
     <p>Les données collectées ont un seul but : faire fonctionner l'application.</p>
     <ul>
       <li>Vous authentifier et sécuriser votre compte</li>
-      <li>Afficher les prestataires proches de votre position</li>
+      <li>Afficher les prestataires proches de votre position (en temps réel uniquement)</li>
       <li>Permettre aux utilisateurs de contacter les prestataires</li>
       <li>Afficher les avis associés aux profils</li>
       <li>Fournir aux prestataires des statistiques de visibilité</li>
